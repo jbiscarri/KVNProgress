@@ -523,7 +523,7 @@ static KVNProgressConfiguration *configuration;
 {
 	KVNProgress *progressView = [self sharedView];
 	
-	if (progressView.state == KVNProgressStateDismissing) {
+//	if (progressView.state == KVNProgressStateDismissing) {
 		[self sharedView].state = KVNProgressStateHidden;
 		
 		[progressView cancelCircleAnimation];
@@ -534,13 +534,13 @@ static KVNProgressConfiguration *configuration;
 		
 		UIAccessibilityPostNotification(UIAccessibilityScreenChangedNotification, nil);
 		
-		if (!progressView.progressWindow.hidden) {
+//		if (!progressView.progressWindow.hidden) {
 			progressView.progressWindow.hidden = YES;
 			[progressView.originalKeyWindow makeKeyAndVisible];
-		}
+//		}
 		
 		[UIApplication sharedApplication].statusBarStyle = [self sharedView].rootControllerStatusBarStyle;
-	}
+//	}
 	
 	if (completion) {
 		dispatch_async(dispatch_get_main_queue(), ^{
