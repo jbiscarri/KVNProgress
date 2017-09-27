@@ -24,4 +24,9 @@
 	return YES;
 }
 
+
+- (UIStatusBarStyle)preferredStatusBarStyle{
+    return [UIApplication sharedApplication].statusBarStyle;
+}
+
 @end
